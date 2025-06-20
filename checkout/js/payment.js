@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             infoDiv.className = 'text-center text-sm text-gray-600 mt-2';
             infoDiv.innerHTML = `
                 <p class="font-medium text-green-600 mb-1">✅ QR Code gerado!</p>
-                <p>Escaneie com seu app bancário para pagar R$ 61,90</p>
+                <p>Escaneie com seu app bancário para pagar R$ 78,47</p>
             `;
             qrContainer.appendChild(infoDiv);
         };
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="fas fa-qrcode text-blue-500 text-xl"></i>
             <div>
                 <p class="font-medium text-blue-700">PIX BlackCat gerado com sucesso!</p>
-                <p class="text-sm text-blue-600">Escaneie o QR Code REAL ou use o código PIX para pagar R$ 61,90</p>
+                <p class="text-sm text-blue-600">Escaneie o QR Code REAL ou use o código PIX para pagar R$ 78,47</p>
             </div>
         </div>
     `;
