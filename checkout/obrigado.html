@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pagamento Confirmado - Obrigado!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- PIXELS DE CONVERSÃO - SUBSTITUA PELOS SEUS IDs REAIS -->
+    <!-- Google Ads Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // SUBSTITUA 'AW-XXXXXXXXX' pelo seu ID do Google Ads
+        gtag('config', 'AW-XXXXXXXXX');
+        
+        // Evento de conversão - SUBSTITUA pelos seus valores reais
+        gtag('event', 'conversion', {
+            'send_to': 'AW-XXXXXXXXX/YYYYYYYYYY', // Substitua pelo seu conversion ID
+            'value': 61.90,
+            'currency': 'BRL',
+            'transaction_id': localStorage.getItem('transactionId') || 'unknown'
+        });
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // SUBSTITUA 'XXXXXXXXXXXXXXX' pelo seu Facebook Pixel ID
+        fbq('init', 'XXXXXXXXXXXXXXX');
+        fbq('track', 'PageView');
+        
+        // Evento de conversão/compra
+        fbq('track', 'Purchase', {
+            value: 61.90,
+            currency: 'BRL',
+            content_ids: ['tarifa-transacional-2025'],
+            content_type: 'product'
+        });
+    </script>
+    <noscript>
+        <!-- SUBSTITUA 'XXXXXXXXXXXXXXX' pelo seu Facebook Pixel ID -->
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1" />
+    </noscript>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .success-animation {
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f39c12;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="main-wrapper">
+        <div class="main-container">
+            <div class="min-h-screen flex flex-col items-center justify-center relative">
+                <!-- Confetti Animation -->
+                <div class="confetti" style="left: 10%; animation-delay: 0s; background: #e74c3c;"></div>
+                <div class="confetti" style="left: 20%; animation-delay: 0.5s; background: #f39c12;"></div>
+                <div class="confetti" style="left: 30%; animation-delay: 1s; background: #2ecc71;"></div>
+                <div class="confetti" style="left: 40%; animation-delay: 1.5s; background: #3498db;"></div>
+                <div class="confetti" style="left: 50%; animation-delay: 2s; background: #9b59b6;"></div>
+                <div class="confetti" style="left: 60%; animation-delay: 0.3s; background: #e67e22;"></div>
+                <div class="confetti" style="left: 70%; animation-delay: 0.8s; background: #1abc9c;"></div>
+                <div class="confetti" style="left: 80%; animation-delay: 1.3s; background: #e91e63;"></div>
+                <div class="confetti" style="left: 90%; animation-delay: 1.8s; background: #ff5722;"></div>
+
+                <div class="w-full max-w-2xl bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="p-8 md:p-12 text-center">
+                        <!-- Logo -->
+                        <div class="flex justify-center mb-8">
+                            <div class="logo-container">
+                                <img src="https://i.imgur.com/fWEtAPG.png" 
+                                     alt="Logo da Empresa" 
+                                     class="w-auto object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Success Icon -->
+                        <div class="success-animation mb-8">
+                            <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-check text-4xl text-blue-500"></i>
+                            </div>
+                        </div>
+
+                        <!-- Success Message -->
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                            🎉 Pagamento Confirmado!
+                        </h1>
+                        
+                        <p class="text-lg text-gray-600 mb-6">
+                           Obrigado pelo pagamento do seu Imposto sobre Saque! A sua indenização de R$ 5.960,50, Será depositado em instantes!
+                        </p>
+
+                        <!-- Transaction Details -->
+                        <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                            <h3 class="font-semibold text-gray-800 mb-4">Detalhes da Transação</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Pago:</span>
+                                    <span class="font-medium">Imposto de Saque</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Valor da tarifa</span>
+                                    <span class="font-medium text-blue-600">R$ 61,90</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Valor da Indenização</span>
+                                    <span class="font-medium text-blue-600">R$ 5.960,50</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Método:</span>
+                                    <span class="font-medium">PIX</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Status:</span>
+                                    <span class="font-medium text-blue-600">✅ Confirmado</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">ID da Transação:</span>
+                                    <span class="font-medium" id="transactionId">Carregando...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Next Steps -->
+                        <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                            <h3 class="font-semibold text-blue-800 mb-3">📧 Próximos Passos</h3>
+                            <ul class="text-sm text-blue-700 space-y-2 text-left">
+                                <li>• Você receberá um e-mail de confirmação em instantes</li>
+                                <li>• O valor de R$ 5.960,50 será depositado automaticamente</li>
+                                <li>• Em caso de dúvidas, entre em contato com a central em gov.br/atendimento</li>
+                            </ul>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-4">
+                            <button onclick="window.print()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center">
+                                <i class="fas fa-print mr-2"></i>
+                                Imprimir Comprovante
+                            </button>
+                            
+                            <a href="index.html" class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 text-center">
+                                <i class="fas fa-home mr-2"></i>
+                                Voltar ao Início
+                            </a>
+                        </div>
+
+                        <!-- Support -->
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <p class="text-sm text-gray-600 mb-2">Precisa de ajuda?</p>
+                            <div class="flex justify-center space-x-4 text-sm">
+                                <a href="#" class="text-blue-500 hover:text-blue-600">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Suporte
+                                </a>
+                                <a href="#" class="text-blue-500 hover:text-blue-600">
+                                    <i class="fas fa-phone mr-1"></i>
+                                    Contato
+                                </a>
+                                <a href="#" class="text-blue-500 hover:text-blue-600">
+                                    <i class="fas fa-question-circle mr-1"></i>
+                                    FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-8 text-center text-xs md:text-sm text-white px-4">
+                    <div class="flex items-center justify-center space-x-2 mb-2">
+                        <i class="fas fa-lock"></i>
+                        <span>Transação processada com segurança</span>
+                    </div>
+                    <div class="mt-2">
+                        © 2025 Pagamento Seguro - Todos os direitos reservados
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carregar ID da transação do localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const transactionId = localStorage.getItem('transactionId') || 'N/A';
+            document.getElementById('transactionId').textContent = transactionId;
+            
+            // Limpar dados após exibir (opcional)
+            // localStorage.removeItem('transactionId');
+            
+            console.log('🎉 Página de obrigado carregada!');
+            console.log('📊 Pixels de conversão disparados!');
+            console.log('🔢 ID da Transação:', transactionId);
+        });
+        
+        // Adicionar mais confetti dinamicamente
+        function createConfetti() {
+            const colors = ['#e74c3c', '#f39c12', '#2ecc71', '#3498db', '#9b59b6', '#e67e22', '#1abc9c', '#e91e63'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    document.body.appendChild(confetti);
+                    
+                    // Remover após animação
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+        
+        // Iniciar confetti
+        createConfetti();
+        
+        // Repetir confetti a cada 5 segundos
+        setInterval(createConfetti, 5000);
+    </script>
+</body>
+</html>
